@@ -14,6 +14,7 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        // function Comoponent
         function HelloWorld(props) {
             console.log(props);
             return (
@@ -24,6 +25,19 @@
                 </div>
             );
         }
+        //class component
+        class MyAgeClas extends React.Component{
+            render(){
+                var persondata=this.props;
+                return(
+                    <div>
+                        <h1>Personal information</h1>
+                        <p>Name ={persondata.name}, address= {persondata.adress} ,Contract= {persondata.contract}</p>
+                    </div>
+                );
+            }
+        }
+        // function Comoponent
         function Person(props)
         {
             return(
@@ -31,6 +45,7 @@
                     <h1> Name is : {props.name}</h1>
                     <h1> Addres is : {props.adress}</h1>
                     <h1> Contract is : {props.contract}</h1>
+                    <MyAgeClas  name={props.name} address={props.adress} contract={props.contract}/>
                 </div>
             );
         }
@@ -38,6 +53,7 @@
             <div>
                 <HelloWorld name="Akteruzzaman"/>
                 <HelloWorld name="Suroz"/>
+                
                 
             </div>,
             document.getElementById('root')
