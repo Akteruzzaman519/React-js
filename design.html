@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>React Js</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class HotNews extends React.Component{
+            render(){
+                const props=this.props;
+                return(
+                    <div className={props.name}>
+                        <img className={props.imagclass}  src={props.link}/>
+                        <p className={props.headclass}>  {props.heading}</p>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <div className="containername">
+                <HotNews name="lead1" imagclass="imagel1" headclass="headingl1" link="http://www.poriborton.news/newupload/Viras.jpg" heading="দেশে করোনায় আরো ২৬ মৃত্যু, শনাক্ত ১৫৪৪"/>
+
+                <HotNews  name="lead2" imagclass="imagel2" headclass="headingl2"  link="http://www.poriborton.news/newupload/PM-2.jpg" heading="করোনা মোকাবিলায় অনুদান গ্রহণ করলেন প্রধানমন্ত্রী"/>
+
+                <HotNews  name="lead2" imagclass="imagel2" headclass="headingl2"   link="http://www.poriborton.news/newupload/119843577_339815810699099_7881896888868038951_n.png" heading="করোনায় সিএসইর সাবেক এমডি মারুফ মতিনের মৃত্যু"/>
+
+                <HotNews name="lead3" imagclass="imagel3" headclass="headingl3"  link="http://www.poriborton.news/newupload/Police.jpg" heading="চট্টগ্রামে সড়ক দুর্ঘটনায় পুলিশের এসআই নিহত"/>
+
+                <HotNews name="lead3" imagclass="imagel3" headclass="headingl3"  link="http://www.poriborton.news/newupload/Hasan.jpg" heading="প্রধানমন্ত্রী যেভাবে খালেদাকে মুক্তি দিয়েছেন তা নজীরবিহীন"/>
+
+                <HotNews name="lead3" imagclass="imagel3" headclass="headingl3"  link="http://www.poriborton.news/newupload/Shahed.jpg" heading="সাহেদের অস্ত্র মামলার রায় ২৮ সেপ্টেম্বর"/>
+            </div>,
+            document.getElementById('root')
+        );
+
+    </script>
+</body>
+
+</html>
