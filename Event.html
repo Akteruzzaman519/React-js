@@ -17,21 +17,37 @@
     <script type="text/babel">
         //class component
         class HotNews extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    tolatEditCount:0,
+                }
+                this.state1={
+                    tolatdeleteCount:0,
+                }
+            }
             edit(){
                 alert("edit button is clicked")
+              this.setState({
+                  tolatEditCount:this.state.tolatEditCount+1
+              });  
             }
             delete(){
                 alert("Delete button is clicked")
+                
             }
             render(){
                 var props=this.props;
+                const total=this.state.tolatEditCount;
                 return(
                     <div className="bodycon">
                         <h1>{props.heading}</h1>
                         <div className="action">
-                        <button className="edit" onClick={this.edit}>Edit</button>
-                        <button className="delete" onClick={this.delete}>Delete</button>
+                        <button className="edit" onClick={()=>this.edit()}>Edit</button>
+                        <button className="delete" onClick={()=>this.delete()}>Delete</button>
                         </div>
+
+                        {!!total && (<p>Total edit clicked = {total}</p>)}
                     </div>
                 );
             }
