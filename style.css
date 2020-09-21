@@ -57,3 +57,24 @@
     position: absolute;
     color: white;
 }
+.container{
+    border: 2px solid gray;
+    width: 500px;
+    padding: 10px;
+}
+.bodycon{
+    border: 1px solid tomato;
+    padding: 10px;
+}
+button{
+    
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+.edit{
+    background-color: green;
+}
+.delete{
+    background-color: red;
+}
